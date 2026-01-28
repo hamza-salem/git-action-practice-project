@@ -19,7 +19,7 @@ jobs:
         run: npm run lint
   Test:
     name: Test Code
-    uses: Lint Command
+    needs: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Get Code

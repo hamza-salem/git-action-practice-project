@@ -18,7 +18,6 @@ jobs:
       - name: Run Lint
         run: npm run lint
   Test:
-    uses: Lint
     name: Test Code
     runs-on: ubuntu-latest
     steps:

@@ -2,11 +2,14 @@ name: deployment
 on: push
 jobs:
   Lint:
-    - name: Get Code
-      uses: actions/checkout@v6
-    - name: Install Node
-      uses: actions/setup-node@v6
-      with:  
-        - node-vesion: 18
-    - name: Execute Lint
-      run: npm lint
+    name: Lint Command
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v6
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:  
+          - node-vesion: 18
+      - name: Execute Lint
+        run: npm lint

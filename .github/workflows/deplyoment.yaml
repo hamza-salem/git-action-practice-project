@@ -18,6 +18,7 @@ jobs:
       - name: Run Lint
         run: npm run lint
   Test:
+    uses: Lint
     name: Test Code
     runs-on: ubuntu-latest
     steps:
@@ -31,3 +32,19 @@ jobs:
         run: npm ci
       - name: Run Test
         run: npm run test
+
+  Deploy:
+    uses: Test
+    name: Deploy Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v6
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:  
+          node-vesion: 18
+      - name: Execute Node
+        run: npm ci
+      - name: Run Test
+        run: npm run build

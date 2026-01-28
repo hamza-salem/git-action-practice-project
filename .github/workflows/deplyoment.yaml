@@ -12,4 +12,4 @@ jobs:
         with:  
           node-vesion: 18
       - name: Execute Lint
-        run: npm lint
+        run: npm run lint
